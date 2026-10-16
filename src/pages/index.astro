@@ -9,35 +9,35 @@ const featured = projects.filter((project) => project.data.featured).slice(0, 4)
 const base = import.meta.env.BASE_URL;
 ---
 
-<section class="hero--home">
-  <BaseLayout title={profile.name} description="Technical portfolio for Colin Aysun, an MIT Electrical Engineering with Computing student.">
-      <section class="hero">
-        <img
-          class="hero__portrait"
-          src={`${base}assets/projects/Colin_Aysun_Senior_Headshot.PNG`}
-          alt="Portrait of Colin Aysun"
-        />
-        <div class="hero__content">
-          <div class="hero__text">
-              <p class="eyebrow">{profile.school} / {profile.degree}</p>
-            <div class="white-wrapper">
+<BaseLayout title={profile.name} description="Technical portfolio for Colin Aysun, an MIT Electrical Engineering with Computing student.">
+  <section class="hero--home">
+    <section class="hero">
+      <img
+        class="hero__portrait"
+        src={`${base}assets/projects/Colin_Aysun_Senior_Headshot.PNG`}
+        alt="Portrait of Colin Aysun"
+      />
+      <div class="hero__content">
+        <div class="hero__text">
+          <p class="eyebrow">{profile.school} / {profile.degree}</p>
+          <div class="white-wrapper">
             <p>Engineering projects across robotics, machine learning, hardware, and app development.</p>
-              <p>
-                I have independently explored diverse fields of engineering, from model airplane design to
-                machine learning-enhanced color detection, with a focus on practical systems and problem-solving.
-              </p>
-            </div>
-            <div class="button-row">
-              <a class="button" href={`${base}projects/`}>View projects</a>
-              <a class="button button--secondary" href={`${base}resume.pdf`}>Resume PDF</a>
-            </div>
+            <p>
+              I have independently explored diverse fields of engineering, from model airplane design to
+              machine learning-enhanced color detection, with a focus on practical systems and problem-solving.
+            </p>
           </div>
-          <div class="hero__links" aria-label="Profile links">
-            <a href={profile.github}>GitHub</a>
-            <a href={profile.linkedin}>LinkedIn</a>
-            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <div class="button-row">
+            <a class="button" href={`${base}projects/`}>View projects</a>
+            <a class="button button--secondary" href={`${base}resume.pdf`}>Resume PDF</a>
           </div>
         </div>
-      </section>
-  </BaseLayout>
-</section>
+        <div class="hero__links" aria-label="Profile links">
+          <a href={profile.github}>GitHub</a>
+          <a href={profile.linkedin}>LinkedIn</a>
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        </div>
+      </div>
+    </section>
+  </section>
+</BaseLayout>

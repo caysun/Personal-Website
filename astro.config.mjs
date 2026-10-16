@@ -4,12 +4,13 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-const site = process.env.SITE_URL || 'https://example.com';
-const base = process.env.BASE_PATH || '/';
+
+const site = process.env.SITE_URL || 'https://caysun.github.io';
+const base = process.env.BASE_PATH || '/Personal-Website/';
 
 export default defineConfig({
-  site: 'https://github.io',
-  base: '/Personal-Website',
+  site,
+  base,
   integrations: [sitemap()],
   markdown: {
     processor: unified({
