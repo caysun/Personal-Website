@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="Contact" description="Contact Colin Aysun by email.">
+  <section class="page-header contact-panel">
+    <p class="eyebrow">Contact</p>
+    <h1>Email is the best way to reach me.</h1>
+    <a class="contact-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+  </section>
+</BaseLayout>

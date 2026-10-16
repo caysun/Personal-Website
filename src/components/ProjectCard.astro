@@ -1,0 +1,21 @@
+---
+const { project, href } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const image = project.data.images[0];
+---
+
+<article class="project-card" data-category={project.data.category}>
+  {image && (
+    <a class="project-card__image" href={href} aria-label={`Open ${project.data.title}`}>
+      <img src={`${base}${image.src}`} alt={image.alt} loading="lazy" />
+    </a>
+  )}
+  <div class="project-card__body">
+    <p class="eyebrow">{project.data.category}</p>
+    <h2><a href={href}>{project.data.title}</a></h2>
+    <p>{project.data.summary}</p>
+    <ul class="tag-list" aria-label="Tools and topics">
+      {project.data.tags.slice(0, 4).map((tag) => <li>{tag}</li>)}
+    </ul>
+  </div>
+</article>

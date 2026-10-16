@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile, skills } from '../data/profile';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="About" description="Education, experience, skills, and resume details for Colin Aysun.">
+  <section class="page-header">
+    <p class="eyebrow">About / Experience</p>
+    <h1>{profile.degree} at {profile.school}.</h1>
+    <p>
+      I am eager to continue exploring engineering and its applications to real-world problems.
+    </p>
+    <a class="button" href={`${base}resume.pdf`}>Download resume</a>
+  </section>
+
+  <section class="section two-column">
+    <div>
+      <h2>Education</h2>
+      <p><strong>{profile.school}</strong><br />{profile.degree}<br />{profile.graduation}</p>
+      <p><strong>Oviedo High School</strong><br />GPA: Weighted: 4.849 / Unweighted: 4.0<br />Valedictorian (1st out of 566)</p>
+      <p>FTC Robotics Co-Captain, Competitive Programming Club Vice President, ABC Tutoring Co-founder.</p>
+    </div>
+    <div>
+      <h2>Research</h2>
+      <p><strong>MIT Kavli Institute Research Lab, Researcher</strong><br />with Prof. Julien De Wit, Sep. 2026 - present</p>
+      <p>Researching Machine Learning for Detecting Hidden Exoplanets through Stellar Heartbeats.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Technical Skills</p>
+      <h2>Languages, tools, and libraries from the resume.</h2>
+    </div>
+    <div class="skill-grid">
+      <div><h3>Languages</h3><p>{skills.languages.join(', ')}</p></div>
+      <div><h3>Frameworks</h3><p>{skills.frameworks.join(', ')}</p></div>
+      <div><h3>Developer Tools</h3><p>{skills.tools.join(', ')}</p></div>
+      <div><h3>Libraries</h3><p>{skills.libraries.join(', ')}</p></div>
+    </div>
+  </section>
+
+  <section class="section two-column">
+    <div>
+      <h2>Robotics</h2>
+      <p>
+        I competed in the FIRST Tech Challenge all four years of high school and built skills in
+        computer-aided design, object-oriented programming, version control, and software-hardware integration.
+      </p>
+    </div>
+    <div>
+      <h2>Other Interests</h2>
+      <p>Varsity Cross Country and Track & Field: 5K: 15:02, Mile 4:13.</p>
+    </div>
+  </section>
+</BaseLayout>
